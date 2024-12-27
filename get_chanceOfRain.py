@@ -2,7 +2,7 @@ import requests
 
 try:
     # タイムアウトを5秒に設定
-    response = requests.get("https://weather.tsukumijima.net/api/forecast/city/180010",timeout=5)
+    response = requests.get("https://weather.tsukumijima.net/api/forecast/city/18001",timeout=5)
 
     # HTTPステータスコードをチェック
     response.raise_for_status()
@@ -27,3 +27,6 @@ except requests.exceptions.HTTPError as e:
 except requests.exceptions.RequestException as e:
     # その他のリクエストエラー
     print(f"リクエスト中にエラーが発生しました: {e}")
+
+except KeyError:
+    print("KeyError")

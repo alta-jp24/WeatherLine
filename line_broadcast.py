@@ -5,13 +5,12 @@ def lambda_handler(event, context):
     # 環境変数の取得
     CHANNEL_ACCESS_TOKEN = os.environ['CHANNEL_ACCESS_TOKEN']
     
-    # LINEの返信APIにメッセージを送信
+    # LINE APIのヘッダー
     headers = {
         'Content-Type': 'application/json',
         'Authorization': f'Bearer {CHANNEL_ACCESS_TOKEN}'
     }
-
-    # メッセージ内容の作成
+    # LINEにメッセージを送信
     body = {
         "messages": [
             {

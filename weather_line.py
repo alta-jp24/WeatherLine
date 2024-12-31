@@ -28,9 +28,9 @@ def lambda_handler(event, context):
         else:
             chanceOfRain = int(chanceOfRain_str)
             if chanceOfRain >= 50:
-                message = f"T12_18の降水確率は{chanceOfRain}%です。雨の可能性があります。"
+                message = f"本日18時の降水確率は{chanceOfRain}%です。雨の可能性があります。"
             else:
-                message = f"T12_18の降水確率は{chanceOfRain}%です。雨の可能性は低いです。"
+                message = f"本日18時の降水確率は{chanceOfRain}%です。雨の可能性は低いです。"
 
     except requests.exceptions.Timeout:
         message = "天気予報の取得に失敗しました（タイムアウト）。"
